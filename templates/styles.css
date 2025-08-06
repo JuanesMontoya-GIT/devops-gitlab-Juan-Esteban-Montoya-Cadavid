@@ -1,0 +1,235 @@
+* {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body, html {
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      flex-direction: row;
+    }
+
+.left-panel {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+}
+
+.left-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4); /* opcional: oscurece imagen */
+  height: 100%;
+  overflow-y: auto;
+}
+
+
+    .right-panel {
+      flex: 1;
+      background-color: #be1e2d
+;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start; /* Alinear arriba */
+      padding: 40px 20px;
+    }
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .welcome-section-top {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      margin-bottom: 10px;
+    }
+
+    .welcome-section-top h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .welcome-section-top p {
+      font-size: 14px;
+      color: bla;
+      margin: 0;
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .login-box h2 {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .login-box p {
+      color: #555;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .form-group label {
+      font-size: 14px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #be1e2d;
+    }
+
+    .forgot-password {
+      text-align: right;
+      font-size: 13px;
+      margin-top: -10px;
+      margin-bottom: 15px;
+    }
+
+    .forgot-password a {
+      color: #be1e2d;
+      text-decoration: none;
+    }
+
+    .btn-login {
+      background-color: #be1e2d;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .register {
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    .register a {
+      color: #be1e2d;
+      text-decoration: none;
+    }
+
+    .copyright {
+      font-size: 11px;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    .main-content
+    {
+        margin-top: 50px;
+    }
+
+
+    .stats-section {
+  display: flex;
+  justify-content: space-around; /* distribuye el espacio entre los elementos */
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap; /* opcional si quieres que se ajusten en pantallas pequeñas */
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  color: white;
+}
+
+.stat-item span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-item small {
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .left-image {
+    position: relative;
+    height: 200px;
+    object-position: center;
+  }
+
+  .content-overlay {
+    position: relative;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* para que el texto sea legible */
+    height: auto;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
