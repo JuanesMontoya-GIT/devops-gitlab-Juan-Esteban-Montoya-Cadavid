@@ -15,22 +15,33 @@
       flex-direction: row;
     }
 
- .left-panel {
+.left-panel {
+  position: relative;
   flex: 1;
-  background-color: #f1f2f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden; /* Evita desbordamientos */
+  overflow: hidden;
 }
 
 .left-image {
-  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 100%;
+  width: 100%;
   object-fit: cover;
-  object-position: center; 
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  object-position: center;
+  z-index: 1;
 }
+
+.content-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.4); /* opcional: oscurece imagen */
+  height: 100%;
+  overflow-y: auto;
+}
+
 
     .right-panel {
       flex: 1;
@@ -159,19 +170,66 @@
       margin-top: 10px;
     }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-
-      .left-panel {
-        height: 150px;
-        flex: none;
-      }
-
-      .right-panel {
-        flex: none;
-        height: auto;
-      }
+    .main-content
+    {
+        margin-top: 50px;
     }
+
+
+    .stats-section {
+  display: flex;
+  justify-content: space-around; /* distribuye el espacio entre los elementos */
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap; /* opcional si quieres que se ajusten en pantallas pequeñas */
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  color: white;
+}
+
+.stat-item span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-item small {
+  font-size: 0.9rem;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    flex: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .left-image {
+    position: relative;
+    height: 200px;
+    object-position: center;
+  }
+
+  .content-overlay {
+    position: relative;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* para que el texto sea legible */
+    height: auto;
+  }
+
+  .stats-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
